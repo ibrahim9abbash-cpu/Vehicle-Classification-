@@ -1,11 +1,8 @@
-# Vehicle-Classification-
-<img width="617" height="360" alt="image" src="https://github.com/user-attachments/assets/caea53c4-64f0-416a-ab9b-cced498542be" />
-
-
-
 # YOLOv8 Vehicle Detection Pipeline 🚗🚛
 
 A complete computer vision desktop application built with **Python**, **OpenCV**, and **Ultralytics YOLOv8**. This pipeline provides an intuitive Graphical User Interface (GUI) to break down input videos into individual frames, isolate vehicle classes using a heavy-weight model layer, and recompile the detected sequences seamlessly back into a finalized video.
+
+<img width="617" height="360" alt="image" src="https://github.com/user-attachments/assets/caea53c4-64f0-416a-ab9b-cced498542be" />
 
 ## 🌟 Features
 * **Intuitive GUI:** Built completely on Tkinter with dynamic real-time progress bars and application state logging.
@@ -22,8 +19,10 @@ YOLO/
 ├── car_detected_frames/     # Temporary workspace for annotated vehicle frames
 ├── extracted_frames/        # Temporary workspace for raw source frames
 │
-├── yolov8l.pt              # The local YOLOv8 Large weights file
-├── app.py                  # Core Tkinter GUI pipeline code
+├── yolov8n.pt              # The local YOLOv8 Nano weights file
+├── gui.py                  # Core Tkinter GUI pipeline code
+├── videoWriter.py          # Script for merging frames back into a video
+├── yolo.ipynb              # Jupyter notebook containing code drafts/tests
 └── README.md               # Documentation guide
 ```
 
@@ -53,13 +52,13 @@ pip install ultralytics opencv-python
 
 Execute the pipeline framework using your terminal:
 ```bash
-python app.py
+python gui.py
 ```
 
 ### Application Execution Steps:
 1. Click the **Upload Video & Process** button.
 2. Select your target traffic video file (`.mp4`, `.avi`, `.mov`, etc.).
-3. The software will automatically isolate individual sequence fields, pass them chronologically to the **YOLOv8l** neural layers, filter out empty fields, and generate a structural `car_detection_output.mp4` sequence inside your root working tree.
+3. The software will automatically isolate individual sequence fields, pass them chronologically to the **YOLOv8** neural layers, filter out empty fields, and generate a structural `car_detection_output.mp4` sequence inside your root working tree.
 
 ---
 
